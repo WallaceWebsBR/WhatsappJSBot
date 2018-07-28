@@ -20,8 +20,9 @@ Pasta CGI do servidor
 
 # Instruções para o Funcionamento
 1. Importe o arquivo bot.js no tampermonkey
-2. Abra o WhatsApp Web e sincronize
-3. Abra o console apertando F12 e verifique se os comandos estão sendo reconhecidos
+2. Edite a URL para WebHook no final do Arquivo
+3. Abra o WhatsApp Web e sincronize
+4. Abra o console apertando F12 e verifique se os comandos estão sendo reconhecidos
 
 # Agradecimentos
 Bruno222 ( Bot em JavaScript )
