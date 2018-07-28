@@ -3,9 +3,9 @@ Bot baseado no WhatsApp Web, utilizando PHP, Javascript, Python e o navegador Mo
 
 # Requisitos
 Um servidor RDP
-  - 3 GHZ de processador
-  - 4 Gigas de RAM
-  - Com firefox e tampermonkey
+  - 3 GHZ de processador Quad Code
+  - 4 Gigas de RAM (Recomendado: 6 Gigas)
+  - Browser Mozilla-Firefox e Tampermonkey
   - Um servidor Apache
   - Um dispositivo Android com WhatsApp em segundo plano
 
