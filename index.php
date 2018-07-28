@@ -17,7 +17,7 @@ $dateTime = ('Y/m/d G:i:s');
 $text0 = $_GET['text'];
 $textocompleto = preg_replace("/\r?\n/","", $text0);
 $array = explode(":", $textocompleto);
-$Texto = array("{$array[0]}", "{$array[1]}");
+$texto = array("{$array[0]}", "{$array[1]}");
 
 //LOG DE MENSAGENS PARA TESTES
 
