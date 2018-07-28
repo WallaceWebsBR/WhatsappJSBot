@@ -17,44 +17,35 @@
 	var elementConfig = {
 		"chats": [1, 0, 5, 2, 0, 3, 0, 0, 0],
 		"chat_icons": [0, 0, 1, 1, 1, 0],
-		"chat_title": [0, 0, 1, 0, 0, 0],
+		"chat_title": [0, 0, 1, 0, 0, 0, 0],
 		"chat_lastmsg": [0, 0, 1, 1, 0, 0],
 		"chat_active": [0, 0],
-		"selected_title": [1, 0, 5, 3, 0, 1, 1, 0, 0, 0]
+		"selected_title": [1, 0, 5, 3, 0, 1, 1, 0, 0, 0, 0]
 	};
-
+	
 	//
 	// FUNCTIONS
 	//
-
-	// Get random value between a range
-	setTimeout(function() {
-            window.location.reload(1);
-        }, 180000); // 3 minutos
-
+	
 	function getElement(id, parent){
 		if (!elementConfig[id]){
 			return false;
 		}
 		var elem = !parent ? document.body : parent;
 		var elementArr = elementConfig[id];
-		for (var x in elementArr){
-			var pos = elementArr[x];
-			if (isNaN(pos*1)){ //dont know why, but for some reason after the last position it loops once again and "pos" is loaded with a function WTF. I got tired finding why and did this
-				continue;
-			}
+		elementArr.forEach(function(pos) {
 			if (!elem.childNodes[pos]){
 				return false;
 			}
 			elem = elem.childNodes[pos];
-		}
+		});
 		return elem;
 	}
-
+	
 	function getLastMsg(){
 		var messages = document.querySelectorAll('.msg');
 		var pos = messages.length-1;
-
+		
 		while (messages[pos] && (messages[pos].classList.contains('msg-system') || messages[pos].querySelector('.message-out'))){
 			pos--;
 			if (pos <= -1){
@@ -67,7 +58,7 @@
 			return false;
 		}
 	}
-
+	
 	function getUnreadChats(){
 		var unreadchats = [];
 		var chats = getElement("chats");
@@ -93,14 +84,14 @@
 		}
 		return unreadchats;
 	}
-
+	
 	function didYouSendLastMsg(){
 		var messages = document.querySelectorAll('.msg');
 		if (messages.length <= 0){
 			return false;
 		}
 		var pos = messages.length-1;
-
+		
 		while (messages[pos] && messages[pos].classList.contains('msg-system')){
 			pos--;
 			if (pos <= -1){
@@ -117,15 +108,15 @@
 	const goAgain = (fn, sec) => {
 		// const chat = document.querySelector('div.chat:not(.unread)')
 		// selectChat(chat)
-		setTimeout(fn, sec * 1000);
-	};
+		setTimeout(fn, sec * 1000)
+	}
 
 	// Dispath an event (of click, por instance)
 	const eventFire = (el, etype) => {
 		var evt = document.createEvent("MouseEvents");
 		evt.initMouseEvent(etype, true, true, window,0, 0, 0, 0, 0, false, false, false, false, 0, null);
 		el.dispatchEvent(evt);
-	};
+	}
 
 	// Select a chat to show the main box
 	const selectChat = (chat, cb) => {
@@ -141,10 +132,10 @@
 				}
 				return cb();
 			}, 300);
-		};
+		}
 
 		loopFewTimes();
-	};
+	}
 
 	// Send a message
 	const sendMessage = (chat, message, cb) => {
@@ -157,7 +148,7 @@
 			title = getElement("selected_title").title;
 		}
 		ignoreLastMsg[title] = message;
-
+		
 		messageBox = document.querySelectorAll("[contenteditable='true']")[0];
 
 		//add text into input field
@@ -172,7 +163,7 @@
 		eventFire(document.querySelector('span[data-icon="send"]'), 'click');
 
 		cb();
-	};
+	}
 
 	//
 	// MAIN LOGIC
@@ -181,10 +172,10 @@
 		// get next unread chat
 		const chats = _chats || getUnreadChats();
 		const chat = chats[cnt];
-
+		
 		var processLastMsgOnChat = false;
 		var lastMsg;
-
+		
 		if (!lastMessageOnChat){
 			if (false === (lastMessageOnChat = getLastMsg())){
 				lastMessageOnChat = true; //to prevent the first "if" to go true everytime
@@ -195,7 +186,7 @@
 			lastMessageOnChat = lastMsg = getLastMsg();
 			processLastMsgOnChat = true;
 		}
-
+		
 		if (!processLastMsgOnChat && (chats.length == 0 || !chat)) {
 			//console.log(new Date(), 'nothing to do now... (1)', chats.length, chat);
 			return goAgain(start, 3);
@@ -212,7 +203,7 @@
 		// avoid sending duplicate messaegs
 		if (ignoreLastMsg[title] && (ignoreLastMsg[title]) == lastMsg) {
 			//console.log(new Date(), 'nothing to do now... (2)', title, lastMsg);
-			return goAgain(() => { start(chats, cnt + 1); }, 0.1);
+			return goAgain(() => { start(chats, cnt + 1) }, 0.1);
 		}
 
 		// what to answer back?
@@ -226,7 +217,7 @@ xmlhttp.onreadystatechange = function() {
 
 			if (!sendText) {
 				ignoreLastMsg[title] = lastMsg;
-				console.log(new Date(), 'new message ignored -> ', title, lastMsg);
+			//	console.log(new Date(), 'new message ignored -> ', title, lastMsg);
 				return goAgain(() => { start(chats, cnt + 1); }, 0.1);
 			}
 
@@ -249,7 +240,7 @@ xmlhttp.onreadystatechange = function() {
 	}
 };
 
-xmlhttp.open("GET", "https://vps.wallacewebs.tk/index.php?text="+encodeURI(lastMsg), true);
+xmlhttp.open("GET", "https://localhost/index.php?text="+encodeURI(lastMsg), true);
 xmlhttp.send();
 	};
 	start();
