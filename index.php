@@ -1,7 +1,8 @@
 <?php
+//DIGITE A URL DO SERVIDOR APACHE
+$urlbase = '';
 
 //PARA DEBUGAR ERROS
-
 //ini_set('display_errors',1);
 //ini_set('display_startup_erros',1);
 //error_reporting(E_ALL);
@@ -33,7 +34,7 @@ if ($texto[1] == "ajudacomandos"){
 }
 
 if ($texto[1] == "piada"){
-$endpoint = file_get_contents("https://vps.wallacewebs.tk/piada.php");
+$endpoint = file_get_contents("https://{$urlbase}/piada.php");
 $saida = json_decode($endpoint, true);
 echo $saida['pergunta'] . "<br /><br />" . $saida['resposta'];
 echo "<br /><br />Bot feito por +5591984390053(WallaceWebs)";
@@ -41,7 +42,7 @@ echo "<br /><br />Bot feito por +5591984390053(WallaceWebs)";
 
 //BOT PRA SABER O DIA DA SEMANA E RETORNAR VALOR NULO(EVITAR FLOOD DE MENSAGENS)
 else {
-$response = file_get_contents("http://vps.wallacewebs.tk/cgi/bot.py?data={$texto[1]}");
+$response = file_get_contents("http://{$urlbase}/cgi-bin/bot.py?data={$texto[1]}");
   if ($response){
       $response = json_decode($response,true);
         if ($response){
