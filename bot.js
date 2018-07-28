@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Jarvis
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
+// @name         WhatsApp Bot
+// @namespace    https://github.com/WallaceWebsBR/WhatsWebsBot
+// @version      1.3
+// @description  Extensao para Tampermonkey, Bot para WhatsApp.
 // @author       Wallace Alberto
 // @match        https://web.whatsapp.com
 // @grant        none
