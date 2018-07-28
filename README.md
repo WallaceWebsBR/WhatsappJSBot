@@ -6,8 +6,8 @@ Um servidor RDP
   - 3 GHZ de processador
   - 4 Gigas de RAM
   - Com firefox e tampermonkey
-Um servidor Apache
-Um dispositivo Android com WhatsApp em segundo plano
+  - Um servidor Apache
+  - Um dispositivo Android com WhatsApp em segundo plano
 
 # Localização dos Diretórios
 Pasta Raiz da Hospedagem
