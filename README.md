@@ -25,10 +25,9 @@ Pasta CGI do servidor
 4. Abra o WhatsApp Web e sincronize
 5. Abra o console apertando F12 e verifique se os comandos estão sendo reconhecidos
 
-#Bugs e Erros
+# Bugs e Erros
 - Não funciona em conversas privadas no whatsapp.
 - Para servidores Windows é necessário alterar a primeira linha do arquivo bot.py informando o caminho executável do python.
-
 
 # Agradecimentos
 Bruno222 ( Bot em JavaScript )
