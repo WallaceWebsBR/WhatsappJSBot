@@ -6,7 +6,7 @@ Um servidor RDP
   - 3 GHZ de processador Quad Core
   - 4 Gigas de RAM ( Recomendado: 6 Gigas )
   - Browser Mozilla-Firefox e Tampermonkey ( Necessário desativar Content Security Policy - CSP )
-  - Um servidor Apache
+  - Um servidor Apache com suporte a CGI
   - Um dispositivo Android com WhatsApp em segundo plano
 
 # Localização dos Diretórios
@@ -24,6 +24,11 @@ Pasta CGI do servidor
 3. Edite a URL para WebHook no final do Arquivo bot.js
 4. Abra o WhatsApp Web e sincronize
 5. Abra o console apertando F12 e verifique se os comandos estão sendo reconhecidos
+
+#Bugs e Erros
+- Não funciona em conversas privadas no whatsapp.
+- Para servidores Windows é necessário alterar a primeira linha do arquivo bot.py informando o caminho executável do python.
+
 
 # Agradecimentos
 Bruno222 ( Bot em JavaScript )
