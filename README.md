@@ -27,7 +27,8 @@ Pasta CGI do servidor
 
 # Bugs e Erros
 - Não funciona em conversas privadas no whatsapp.
-- Para servidores Windows é necessário alterar a primeira linha do arquivo bot.py informando o caminho executável do python. ex: #!C:\Python**\python.exe
+- Para servidores Windows é necessário alterar a primeira linha do arquivo bot.py informando o caminho executável do python.
+Ex: #!C:\Python**\python.exe
 
 # Agradecimentos
 Bruno222 ( Bot em JavaScript )
