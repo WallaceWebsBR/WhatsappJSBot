@@ -35,7 +35,7 @@ $texto = array("{$array[0]}", "{$array[1]}");
 //LISTA DE COMANDOS DISPONIVEIS
 if ($texto[1] == "ajudacomandos"){
     echo "Comandos Disponíveis <br />";
-    echo " -> piada <br /> -> Dia da Semana nesse formato: 22/03/2018";
+    echo " -> piada <br />";
 }
 
 if ($texto[1] == "piada"){
