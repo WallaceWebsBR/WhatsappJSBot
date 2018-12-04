@@ -23,6 +23,9 @@ Pasta Raiz da Hospedagem
 5. Abra o console apertando F12 e verifique se os comandos estão sendo reconhecidos
 
 # Bugs e Erros
+- Visite minha Wiki
+https://github.com/WallaceWebsBR/WhatsWebsBot/wiki
+
 - É necessário um servidor com https, caso contrário haverá erro de conteúdo misto.
 Ajuda de como desativar a proteção de conteúdo misto.
 https://support.mozilla.org/en-US/kb/mixed-content-blocking-firefox
