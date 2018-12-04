@@ -12,15 +12,19 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: x-test-header, Origin, X-Requested-With, Content-Type, Accept");
 
-//VARIAVEIS PARA MANIPULAR
+//VARIAVEIS PARA MANIPULAR O TEXTO
 $dateTime = ('Y/m/d G:i:s');
 $text0 = $_GET['text'];
 $textocompleto = preg_replace("/\r?\n/","", $text0);
 $array = explode(":", $textocompleto);
 $texto = array("{$array[0]}", "{$array[1]}");
 
-//LOG DE MENSAGENS PARA TESTES
+//RECONHECER COMANDOS DE MENSAGEM PRIVADAS
+if ($texto[1] = 'false'){
+	$texto[1] = $texto[0];
+}
 
+//LOG DE MENSAGENS PARA TESTES
 //$file = "logger.html";
 //$file = fopen($file, "a");
 //$data = "<fieldset><legend> $dateTime </legend> $textocompleto </fieldset> &#013;";
