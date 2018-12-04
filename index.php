@@ -45,7 +45,7 @@ echo $saida['pergunta'] . "<br /><br />" . $saida['resposta'];
 echo "<br /><br />Bot feito por +5591984390053(WallaceWebs)";
 }
 
-//BOT PRA SABER O DIA DA SEMANA E RETORNAR VALOR NULO(EVITAR FLOOD DE MENSAGENS)
+//EM CASO DE NENHUM COMANDO RECONHECIDO, NAO RETORNAR NADA. (PARA EVITAR FLOOD DE MENSAGENS)
 else {
 echo '';
 }
