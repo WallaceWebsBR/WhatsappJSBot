@@ -13,18 +13,19 @@ header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: x-test-header, Origin, X-Requested-With, Content-Type, Accept");
 
 //VARIAVEIS PARA MANIPULAR O TEXTO
-$dateTime = ('Y/m/d G:i:s');
-$text0 = $_GET['text'];
-$textocompleto = preg_replace("/\r?\n/","", $text0);
+$textget = $_GET['text'];
+$textocompleto = preg_replace("/\r?\n/","", $textget);
+
+//VERIFICAR SE É MENSAGEM DE GRUPO OU MENSAGEM PRIVADA
+$msggrupo = strpos( $textocompleto, ':');
+if ($msggrupo != false){
 $array = explode(":", $textocompleto);
 $texto = array("{$array[0]}", "{$array[1]}");
-
-//RECONHECER COMANDOS DE MENSAGEM PRIVADAS
-if ($texto[1] = 'false'){
-	$texto[1] = $texto[0];
+}else{
+	$texto = array("0", "{$textocompleto}");
 }
-
 //LOG DE MENSAGENS PARA TESTES
+//$dateTime = ('Y/m/d G:i:s');
 //$file = "logger.html";
 //$file = fopen($file, "a");
 //$data = "<fieldset><legend> $dateTime </legend> $textocompleto </fieldset> &#013;";
