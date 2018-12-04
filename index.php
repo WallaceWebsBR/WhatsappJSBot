@@ -47,11 +47,5 @@ echo "<br /><br />Bot feito por +5591984390053(WallaceWebs)";
 
 //BOT PRA SABER O DIA DA SEMANA E RETORNAR VALOR NULO(EVITAR FLOOD DE MENSAGENS)
 else {
-$response = file_get_contents("http://{$urlbase}/cgi-bin/bot.py?data={$texto[1]}");
-  if ($response){
-      $response = json_decode($response,true);
-        if ($response){
-          echo $response['saida'];
-	  }
-  }
+echo '';
 }
