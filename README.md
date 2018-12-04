@@ -15,9 +15,6 @@ Pasta Raiz da Hospedagem
 /logger.html
 /piada.php
 
-Pasta CGI do servidor
-/bot.py
-
 # Instruções para o Funcionamento
 1. Edite o arquivo index.php
 2. Importe o arquivo bot.js no tampermonkey
