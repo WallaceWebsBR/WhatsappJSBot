@@ -1,5 +1,5 @@
 # WhatsWebsBot
-Bot baseado no WhatsApp Web, utilizando PHP, Javascript, Python e o navegador Mozilla Firefox
+Bot baseado no WhatsApp Web utilizando PHP, Javascript e o navegador Mozilla Firefox.
 
 # Requisitos
 Um servidor RDP
@@ -29,9 +29,6 @@ Pasta CGI do servidor
 - É necessário um servidor com https, caso contrário haverá erro de conteúdo misto.
 Ajuda de como desativar a proteção de conteúdo misto.
 https://support.mozilla.org/en-US/kb/mixed-content-blocking-firefox
-
-- Para servidores Windows é necessário alterar a primeira linha do arquivo bot.py informando o caminho executável do python.
-Ex: #!C:\Python**\python.exe
 
 # Agradecimentos
 Bruno222 ( Bot em JavaScript )
