@@ -269,5 +269,5 @@ xmlhttp.onreadystatechange = function() {
 	}
 };
 
-xmlhttp.open("GET", "https://localhost/api.php?text="+encodeURI(lastMsg), true);
+xmlhttp.open("GET", "https://localhost/index.php?text="+encodeURI(lastMsg), true);
 xmlhttp.send();
