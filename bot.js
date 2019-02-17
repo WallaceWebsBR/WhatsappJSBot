@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WhatsApp Bot
 // @namespace    https://github.com/WallaceWebsBR/WhatsWebsBot
-// @version      1.3
+// @version      1.9
 // @description  Extensao para Tampermonkey, Bot para WhatsApp.
 // @author       Wallace Alberto
 // @match        https://web.whatsapp.com
@@ -23,9 +23,38 @@
 		"selected_title": [1, 0, 5, 3, 0, 1, 1, 0, 0, 0, 0]
 	};
 
+	const jokeList = [
+		`
+		Husband and Wife had a Fight.
+		Wife called Mom : He fought with me again,
+		I am coming to you.
+		Mom : No beta, he must pay for his mistake,
+		I am comming to stay with U!`,
+
+		`
+		Husband: Darling, years ago u had a figure like Coke bottle.
+		Wife: Yes darling I still do, only difference is earlier it was 300ml now it's 1.5 ltr.`,
+
+		`
+		God created the earth, 
+		God created the woods, 
+		God created you too, 
+		But then, even God makes mistakes sometimes!`,
+
+		`
+		What is a difference between a Kiss, a Car and a Monkey? 
+		A kiss is so dear, a car is too dear and a monkey is U dear.`
+	]
+
+
 	//
 	// FUNCTIONS
 	//
+
+	// Get random value between a range
+	function rand(high, low = 0) {
+		return Math.floor(Math.random() * (high - low + 1) + low);
+	}
 	
 	function getElement(id, parent){
 		if (!elementConfig[id]){
@@ -207,40 +236,38 @@
 		}
 
 		// what to answer back?
-		let sendText
+let sendText
+var xmlhttp = new XMLHttpRequest();
 
-		if (lastMsg.toUpperCase().indexOf('') > -1){
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function() {
-				if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-	   				if (xmlhttp.status == 200) {
-		   				sendText = xmlhttp.responseText;
-	   					}
-					}
-				};		
-			xmlhttp.open("GET", "https://localhost/index.php?text="+encodeURI(lastMsg), true);
-			xmlhttp.send();
-		}
-		
-		// that's sad, there's not to send back...
-		if (!sendText) {
-			ignoreLastMsg[title] = lastMsg;
-			console.log(new Date(), 'new message to process -> ', title, lastMsg);
-			return goAgain(() => { start(chats, cnt + 1) }, 0.1);
-		}
+xmlhttp.onreadystatechange = function() {
+	if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+	   if (xmlhttp.status == 200) {
+		   sendText = xmlhttp.responseText;
+		   
+			if (!sendText) {
+				ignoreLastMsg[title] = lastMsg
+				console.log(new Date(), 'new message ignored -> ', title, lastMsg)
+				return goAgain(() => { start(chats, cnt + 1) }, 0.1)
+			}
 
-		// select chat and send message
-		if (!processLastMsgOnChat){
-			selectChat(chat, () => {
-				sendMessage(chat, sendText.trim(), () => {
-					goAgain(() => { start(chats, cnt + 1) }, 1);
+			console.log(new Date(), 'new message to process, uhull -> ', title, lastMsg)
+
+			// select chat and send message
+			if (!processLastMsgOnChat){
+				selectChat(chat, () => {
+					sendMessage(chat, sendText.trim(), () => {
+						goAgain(() => { start(chats, cnt + 1) }, 0.1)
+					});
+				})
+			} else {
+				sendMessage(null, sendText.trim(), () => {
+					goAgain(() => { start(chats, cnt + 1) }, 0.1)
 				});
-			})
-		} else {
-			sendMessage(null, sendText.trim(), () => {
-				goAgain(() => { start(chats, cnt + 1) }, 1);
-			});
-		}
+			}
+		   
+	   }
 	}
-	start();
-})();
+};
+
+xmlhttp.open("GET", "https://localhost/api.php?text="+encodeURI(lastMsg), true);
+xmlhttp.send();
