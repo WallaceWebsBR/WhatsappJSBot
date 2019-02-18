@@ -10,8 +10,8 @@ Um servidor RDP
   - Um dispositivo Android com WhatsApp em segundo plano
 
 # Localização dos Diretórios
-Pasta Raiz da Hospedagem\n
-/index.php\n
+Pasta Raiz da Hospedagem/n
+/index.php/n
 /funcs.php
 
 # Instruções para o Funcionamento
