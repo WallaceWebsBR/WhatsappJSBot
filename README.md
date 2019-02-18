@@ -6,7 +6,7 @@ Um servidor RDP
   - 3 GHZ de processador Quad Core
   - 4 Gigas de RAM ( Recomendado: 6 Gigas )
   - Browser Mozilla-Firefox e Tampermonkey ( Necessário desativar Content Security Policy - CSP )
-  - Um servidor Apache com suporte a CGI
+  - Um servidor Apache com PHP
   - Um dispositivo Android com WhatsApp em segundo plano
 
 # Localização dos Diretórios
