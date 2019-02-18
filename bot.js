@@ -217,7 +217,7 @@
 		}
 		
 		if (!processLastMsgOnChat && (chats.length == 0 || !chat)) {
-			//console.log(new Date(), 'nothing to do now... (1)', chats.length, chat);
+			console.log(new Date(), 'nothing to do now... (1)', chats.length, chat);
 			return goAgain(start, 3);
 		}
 
@@ -231,12 +231,12 @@
 		}
 		// avoid sending duplicate messaegs
 		if (ignoreLastMsg[title] && (ignoreLastMsg[title]) == lastMsg) {
-			//console.log(new Date(), 'nothing to do now... (2)', title, lastMsg);
+			console.log(new Date(), 'nothing to do now... (2)', title, lastMsg);
 			return goAgain(() => { start(chats, cnt + 1) }, 0.1);
 		}
 
 		// what to answer back?
-let sendText
+		let sendText
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
@@ -267,7 +267,9 @@ xmlhttp.onreadystatechange = function() {
 		   
 	   }
 	}
-};
-
-xmlhttp.open("GET", "https://localhost/index.php?text="+encodeURI(lastMsg), true);
+xmlhttp.open("GET", "https://vps.tankhost.tk/index.php?text="+encodeURI(lastMsg), true);
 xmlhttp.send();
+}
+	}
+	start();
+})()
