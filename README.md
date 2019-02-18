@@ -1,4 +1,4 @@
-# WhatsWebsBot
+# WhatsappJSBot
 Bot baseado no WhatsApp Web utilizando PHP, Javascript e o navegador Mozilla Firefox.
 
 # Requisitos
