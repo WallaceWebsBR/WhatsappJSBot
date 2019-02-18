@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         WhatsApp Bot
-// @namespace    https://github.com/WallaceWebsBR/WhatsWebsBot
-// @version      1.9
-// @description  Extensao para Tampermonkey, Bot para WhatsApp.
+// @name         Whatsapp BOT
+// @namespace    https://github.com/WallaceWebsBR/WhatsappJSBot/
+// @version      2.0
+// @description  Bot em javascript para whatsapp web.
 // @author       Wallace Alberto
 // @match        https://web.whatsapp.com
 // @grant        none
@@ -26,7 +26,7 @@
 	//
 	// FUNCTIONS
 	//
-	
+
 	function getElement(id, parent){
 		if (!elementConfig[id]){
 			return false;
@@ -207,21 +207,21 @@
 		}
 
 		// what to answer back?
-		let sendText
+let sendText
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
 	if (xmlhttp.readyState == XMLHttpRequest.DONE) {
 	   if (xmlhttp.status == 200) {
 		   sendText = xmlhttp.responseText;
-		   
+
 			if (!sendText) {
 				ignoreLastMsg[title] = lastMsg
-				console.log(new Date(), 'new message ignored -> ', title, lastMsg)
+				//console.log(new Date(), 'new message ignored -> ', title, lastMsg)
 				return goAgain(() => { start(chats, cnt + 1) }, 0.1)
 			}
 
-			console.log(new Date(), 'new message to process, uhull -> ', title, lastMsg)
+			//console.log(new Date(), 'new message to process, uhull -> ', title, lastMsg)
 
 			// select chat and send message
 			if (!processLastMsgOnChat){
@@ -235,12 +235,14 @@ xmlhttp.onreadystatechange = function() {
 					goAgain(() => { start(chats, cnt + 1) }, 0.1)
 				});
 			}
-		   
+
 	   }
 	}
-xmlhttp.open("GET", "https://vps.tankhost.tk/index.php?text="+encodeURI(lastMsg), true);
+};
+
+xmlhttp.open("GET", "https://localhost/index.php?text="+encodeURI(lastMsg), true);
 xmlhttp.send();
-}
 	}
 	start();
 })()
+
