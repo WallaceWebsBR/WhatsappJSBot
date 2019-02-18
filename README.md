@@ -12,8 +12,7 @@ Um servidor RDP
 # Localização dos Diretórios
 Pasta Raiz da Hospedagem
 /index.php
-/logger.html
-/piada.php
+/funcs.php
 
 # Instruções para o Funcionamento
 1. Edite o arquivo index.php
