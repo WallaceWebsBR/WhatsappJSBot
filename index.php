@@ -1,50 +1,43 @@
 <?php
 //DIGITE A URL DO SERVIDOR APACHE
-$urlbase = '';
+include 'funcs.php';
 
-//PARA DEBUGAR ERROS
-//ini_set('display_errors',1);
-//ini_set('display_startup_erros',1);
-//error_reporting(E_ALL);
-
-//HEADERS PARA A MANIPULAÇÃO DO TEXTO
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-header("Access-Control-Allow-Headers: x-test-header, Origin, X-Requested-With, Content-Type, Accept");
+//PARA DEBUGAR ERROS, use o 0 para desativar
+$debug = '1';
 
 //VARIAVEIS PARA MANIPULAR O TEXTO
-$textget = $_GET['text'];
-$textocompleto = preg_replace("/\r?\n/","", $textget);
-
+$textocompleto = preg_replace("/\r?\n/","", $_GET['text']);
 //VERIFICAR SE É MENSAGEM DE GRUPO OU MENSAGEM PRIVADA
 $msggrupo = strpos( $textocompleto, ':');
 if ($msggrupo != false){
+	//SE MENSAGEM EM GRUPO
+	$dadosmsg = 'grupo';
 $array = explode(":", $textocompleto);
 $texto = array("{$array[0]}", "{$array[1]}");
 }else{
+	//SE MENSAGEM NO PRIVADO
+	$dadosmsg = 'privado';
 	$texto = array("0", "{$textocompleto}");
 }
-//LOG DE MENSAGENS PARA TESTES
-//$dateTime = ('Y/m/d G:i:s');
-//$file = "logger.html";
-//$file = fopen($file, "a");
-//$data = "<fieldset><legend> $dateTime </legend> $textocompleto </fieldset> &#013;";
-//fwrite($file, $data);
-//fclose($file);
+$msg = $texto[1];
 
 //LISTA DE COMANDOS DISPONIVEIS
-if ($texto[1] == "ajudacomandos"){
+if ($msg == "ajudacomandos"){
     echo "Comandos Disponíveis <br />";
     echo " -> piada <br />";
+	creditos();
 }
 
-if ($texto[1] == "piada"){
-$endpoint = file_get_contents("https://{$urlbase}/piada.php");
-$saida = json_decode($endpoint, true);
-echo $saida['pergunta'] . "<br /><br />" . $saida['resposta'];
-echo "<br /><br />Bot feito por +5591984390053(WallaceWebs)";
+if ($msg == "piada"){
+	echo $dadosmsg."<br />";
+	contar_piada();
+	creditos();
 }
 
+if ($msg == 'hora'){
+	hora();
+	creditos();
+}
 //EM CASO DE NENHUM COMANDO RECONHECIDO, NAO RETORNAR NADA. (PARA EVITAR FLOOD DE MENSAGENS)
 else {
 echo '';
