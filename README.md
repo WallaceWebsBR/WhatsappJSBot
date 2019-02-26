@@ -3,8 +3,8 @@ Bot baseado no WhatsApp Web utilizando PHP, Javascript e o navegador Mozilla Fir
 
 # Requisitos
 Um servidor RDP
-  - 3 GHZ de processador Quad Core
-  - 4 Gigas de RAM ( Recomendado: 6 Gigas )
+  - 2 GHZ de processador Quad Core
+  - 3 Gigas de RAM ( Recomendado: 6 Gigas )
   - Browser Mozilla-Firefox e Tampermonkey ( Necessário desativar Content Security Policy - CSP )
   - Um servidor Apache com PHP
   - Um dispositivo Android com WhatsApp em segundo plano
