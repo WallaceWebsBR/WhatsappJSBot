@@ -1,5 +1,5 @@
 <?php
-//DIGITE A URL DO SERVIDOR APACHE
+//IMPORTAR AQUIVOS DE FUNCOES
 include 'funcs.php';
 
 //PARA DEBUGAR ERROS, use o 0 para desativar
