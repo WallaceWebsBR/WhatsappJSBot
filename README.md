@@ -27,7 +27,7 @@ https://github.com/WallaceWebsBR/WhatsWebsBot/wiki
 
 - É necessário um servidor com https, caso contrário haverá erro de conteúdo misto.
 Ajuda de como desativar a proteção de conteúdo misto.
-https://support.mozilla.org/en-US/kb/mixed-content-blocking-firefox
+https://support.mozilla.org/pt-BR/kb/conteudo-misto-bloqueado-no-firefox
 
 # Agradecimentos
 Bruno222 ( Bot em JavaScript )
