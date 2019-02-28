@@ -33,7 +33,7 @@ https://support.mozilla.org/pt-BR/kb/conteudo-misto-bloqueado-no-firefox
 - Em Conversas de Grupos <br />
 A variável $texto[0] recebe o número do contato, e $texto[1] recebe a mensagem.<br />
 - Em Conversas Privadas <br />
-A variável $texto[0] recebe o texto, não há como receber o número de contato.
+A variável $texto[1] recebe a mensagem, não há como receber o número de contato.
 
 # Agradecimentos
 Bruno222 ( Bot em JavaScript )
