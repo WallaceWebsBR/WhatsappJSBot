@@ -43,3 +43,6 @@ https://github.com/bruno222/whatsapp-web-bot/
 
 NelsonGaldeman ( Ideia da API Externa )
 https://github.com/bruno222/whatsapp-web-bot/issues/29#issuecomment-369263111
+
+# Donate by PayPal
+https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KLS8Z7QPFYKXC
