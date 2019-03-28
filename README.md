@@ -1,9 +1,7 @@
 # Whatsapp JS Bot
 Bot baseado no WhatsApp Web utilizando PHP, Javascript e o navegador Mozilla Firefox.
 
-https://youtu.be/FQPqMtv7XSo
-
-https://www.youtube.com/watch?v=FQPqMtv7XSo
+[![](http://img.youtube.com/vi/FQPqMtv7XSo/0.jpg)](http://www.youtube.com/watch?v=FQPqMtv7XSo "")
 
 # Requisitos
 Um servidor RDP
