@@ -2,6 +2,7 @@
 Bot baseado no WhatsApp Web utilizando PHP, Javascript e o navegador Mozilla Firefox.
 
 https://youtu.be/FQPqMtv7XSo
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FQPqMtv7XSo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 # Requisitos
 Um servidor RDP
