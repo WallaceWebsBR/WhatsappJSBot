@@ -3,6 +3,8 @@ Bot baseado no WhatsApp Web utilizando PHP, Javascript e o navegador Mozilla Fir
 
 https://youtu.be/FQPqMtv7XSo
 
+https://www.youtube.com/watch?v=FQPqMtv7XSo
+
 # Requisitos
 Um servidor RDP
   - 2 GHZ de processador Quad Core
