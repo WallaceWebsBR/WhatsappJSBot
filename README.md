@@ -1,4 +1,4 @@
-#DISCONTINUED 06/01/2019
+# DISCONTINUED 06/01/2019
 Facebook Inc has notified this project as prohibited, as it does not have security and privacy tools, and is a third-party adaptation that violates the terms of use of WhatsApp Inc.
 
 # Whatsapp JS Bot
