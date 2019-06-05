@@ -1,3 +1,6 @@
+#DISCONTINUED 06/01/2019
+Facebook Inc has notified this project as prohibited, as it does not have security and privacy tools, and is a third-party adaptation that violates the terms of use of WhatsApp Inc.
+
 # Whatsapp JS Bot
 Bot baseado no WhatsApp Web utilizando PHP, Javascript e o navegador Mozilla Firefox.
 
